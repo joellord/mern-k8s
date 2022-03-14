@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mern-k8s-back
+  labels:
+    app: mern-k8s
+    component: back
+spec:
+  replicas: 1
+  selector: 
+    matchLabels:
+      component: back
+  template:
+    metadata: 
+      labels:
+        app: mern-k8s
+        component: back
+    spec:
+      containers:
+        - name: mern-k8s-back
+          image: joellord/mern-k8s-back
+          ports: 
+            - containerPort: 5000
+          env: 
+            - name: PORT
+              value: "5000"
+            - name: CONN_STR
+              value: "mongodb+srv://blog:blog@cluster0.2grje.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
