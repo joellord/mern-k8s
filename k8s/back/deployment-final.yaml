@@ -24,5 +24,8 @@ spec:
           env: 
             - name: PORT
               value: "5000"
-            - name: CONN_STR
-              value: "mongodb+srv://user:pass@cluster0.2grje.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+            - name: "CONN_STR"
+              valueFrom:
+                secretKeyRef:
+                  name: mern-k8s-db-admin-mernuser
+                  key: connectionString.standardSrv

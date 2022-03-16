@@ -33,8 +33,8 @@ Using Atlas: Create account, create cluster, save connection string to back/.env
 CONN_STR=...
 
 Using Docker: 
-docker run --name mongodb --rm -d -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=blog MONGO_INITDB_ROOT_PASSWORD=blog mongo
-CONN_STR=mongodb+srv://blog:blog@localhost:27017/myFirstDatabase
+docker run --name mongodb --rm -d -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=user MONGO_INITDB_ROOT_PASSWORD=pass mongo
+CONN_STR=mongodb+srv://user:pass@localhost:27017/myFirstDatabase
 
 npm install mongodb
 
@@ -116,6 +116,8 @@ function App() {
 export default App;
 ```
 
+Add "homepage": "." to package.json
+
 Change front-end to use env variable
 Add front/src/config.json
 {
@@ -130,7 +132,7 @@ cp ./dockerfiles/Dockerfile.back ./back/Dockerfile
 cd back
 docker build -t joellord/mern-k8s-back .
 docker push joellord/mern-k8s-back
-docker run -d --rm --name mern-k8s-back -p 5000:5000 -e PORT=5000 -e CONN_STR="mongodb+srv://blog:blog@cluster0.2grje.mongodb.net/myFirstDatabase" joellord/mern-k8s-back
+docker run -d --rm --name mern-k8s-back -p 5000:5000 -e PORT=5000 -e CONN_STR="mongodb+srv://user:pass@cluster0.2grje.mongodb.net/myFirstDatabase" joellord/mern-k8s-back
 
 Create the Dockerfile for the front end
 cp ./dockerfiles/Dockerfile.front ./front/Dockerfile
@@ -143,10 +145,85 @@ docker run -d --rm --name mern-k8s-front -p 8080:80 -e BASE_URL="http://localhos
 docker stop mern-k8s-front mern-k8s-back
 
 Everything working in containers locally. Let's move to Kubernetes
+
+(Configure DO: https://github.com/digitalocean/Kubernetes-Starter-Kit-Developers/blob/main/03-setup-ingress-controller/nginx.md)
+
 minikube start --driver=virtualbox --host-dns-resolver=true --dns-proxy=false
 
 Create k8s/back/deployment.yaml
 Create k8s/back/service.yaml
 kubectl get all
 kubectl logs pod...
+
+** Setup DO domains to redirect traffic to load balancer
+* Check load balancers: kubectl get svc -n ingress-nginx
+
 Create k8s/ingress.yaml
+
+curl <api.domain>/healthz
+
+Create k8s/front/deployment.yaml
+Create k8s/front/service.yaml
+
+Update ingress to use the new front service
+
+## Install the Operator
+
+### Community
+From root:
+git clone git@github.com:mongodb/mongodb-kubernetes-operator.git
+cd mongodb-kubernetes-operator
+kubectl apply -f config/crd/bases/mongodbcommunity.mongodb.com_mongodbcommunity.yaml
+
+Validate CRD installation
+kubectl get crd/mongodbcommunity.mongodbcommunity.mongodb.com
+
+kubectl apply -k config/rbac/ --namespace default
+
+Verify
+kubectl get role mongodb-kubernetes-operator
+kubectl get rolebinding mongodb-kubernetes-operator
+kubectl get serviceaccount mongodb-kubernetes-operator
+
+Install Operator
+kubectl create -f config/manager/manager.yaml
+(2+ vCPUs required)
+ 
+Verify
+kubectl get pods
+
+Deploy database
+cd k8s
+kubectl apply -f ./mdb_community.yaml
+k get mongodbcommunity
+
+Get Connection String
+kubectl get secret mern-k8s-db-admin-mern-k8s-user -o json | jq -r '.data | with_entries(.value |= @base64d)'
+
+Change backend container
+```
+   env:
+    - name: "CONNECTION_STRING"
+      valueFrom:
+        secretKeyRef:
+          name: <metadata.name>-<auth-db>-<username>
+          key: connectionString.standardSrv
+```
+
+Upgrade to MongoDB 5
+```
+apiVersion: mongodbcommunity.mongodb.com/v1
+kind: MongoDBCommunity
+metadata:
+  name: mern-k8s-db
+  labels:
+    app: mern-k8s
+    component: db
+spec:
+  members: 2
+  type: ReplicaSet
+  version: "5.0.6"
+  security:
+    authentication:
+      modes: ["SCRAM"]
+```

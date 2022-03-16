@@ -6,12 +6,24 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: mern-k8s-front
-            port:
-              name: http
+    - host: api.mern-k8s.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: mern-k8s-back
+                port:
+                  number: 80
+    - host: "mern-k8s.com"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: mern-k8s-front
+                port:
+                  number: 80
+  ingressClassName: nginx

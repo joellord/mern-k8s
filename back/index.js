@@ -36,15 +36,25 @@ app.get("/healthz", (req, res) => {
 
 app.get("/items", async (req, res) => {
   log("/items", "GET request");
-  let collection = await db.collection("items")
-  let items = await collection.find({}).toArray();
+  let items = [];
+  try {
+    let collection = await db.collection("items")
+    items = await collection.find({}).toArray();
+  } catch (e) {
+    log("/items", e.toString());
+  }
   res.send(items).status(200);
 });
 
-app.get("/populate", async (req, res) => {
+app.get("/populate/:name?", async (req, res) => {
   log("/populate", "GET request");
-  let collection = await db.collection("items");
-  let result = await collection.insertOne({name: "Joel"});
+  let result;
+  try {
+    let collection = await db.collection("items");
+    result = await collection.insertOne({name: req.params.name || "New User"});
+  } catch (e) {
+    log("/populate", e.toString());
+  }
   res.send(result).status(200);
 });
 

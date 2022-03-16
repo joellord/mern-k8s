@@ -23,4 +23,4 @@ spec:
             - containerPort: 80
           env: 
             - name: BASE_URL
-              value: "http://localhost:5000"
+              value: "http://api.mern-k8s.com"
