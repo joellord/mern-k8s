@@ -20,6 +20,7 @@ getMongoDB().then(_db => db = _db);
 
 let app = express();
 app.use(cors())
+app.use(express.json());
 
 const log = (route, message) => {
    const now = new Date();
@@ -34,28 +35,40 @@ app.get("/healthz", (req, res) => {
   res.send({status: "Ok", dbConnected: DB_CONNECTED}).status(200);
 });
 
-app.get("/items", async (req, res) => {
-  log("/items", "GET request");
-  let items = [];
+app.get("/entries", async (req, res) => {
+  log("/entries", "GET request");
+  let entries = [];
   try {
-    let collection = await db.collection("items")
-    items = await collection.find({}).toArray();
+    let collection = await db.collection("entries")
+    entries = await collection.find({}).toArray();
   } catch (e) {
-    log("/items", e.toString());
+    log("/entries", e.toString());
   }
-  res.send(items).status(200);
+  res.send(entries).status(200);
 });
 
-app.get("/populate/:name?", async (req, res) => {
-  log("/populate", "GET request");
+app.post("/entry", async (req, res) => {
+  log("/entry", `POST request ${JSON.stringify(req.body)}`);
   let result;
   try {
-    let collection = await db.collection("items");
-    result = await collection.insertOne({name: req.params.name || "New User"});
+    let collection = await db.collection("entries");
+    result = await collection.insertOne(req.body);
   } catch (e) {
-    log("/populate", e.toString());
+    log("/entry", e.toString());
+  }
+  res.send(result).status(201);
+});
+
+app.get("/flush", async (req, res) => {
+  log("/flush", "GET request");
+  let result;
+  try {
+    let collection = await db.collection("entries");
+    result = await collection.deleteMany({});
+  } catch(e) {
+    log("/flush", e.toString());
   }
   res.send(result).status(200);
-});
+})
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));

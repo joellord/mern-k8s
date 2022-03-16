@@ -1,38 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Press+Start+2P&display=swap');
+
+body {
+  background: url("http://www.geocities.ws/mommy9876/Mommy9876sPlace/backs/bubblebg.gif") repeat;
+}
+
+h1 {
+  border-top: dotted 10px red;
+  border-bottom: dotted 10px red;
+  padding: 30px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 3em;
+  color: #ffffff;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #00ff00, 0 0 40px #00cc00, 0 0 50px #33ff33, 0 0 60px #33cc33, 0 0 70px #33aa33;
+}
+
+h2 {
+  animation: spin infinite 4s linear;
+  font-size: 3em;
+  font-weight: 700;
+}
+
+label {
+  font-weight: 700;
+  font-size: 2em;
+}
+
 .App {
   text-align: center;
+  color: #fff;
+  font-family: 'Comic Neue', cursive
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.gb-entry {
+  font-size: 2em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.gb-entry .label {
+  font-weight: 700;
+}
+
+.gb-entry .divider {
+  display:block;
+  border:0px;
+  height:44px;
+  width: 570px;
+  background-image: url("http://www.lindastitt.com/images/fireline.gif");
+}
+
+@keyframes spin {
+  0% {
+    transform: rotateY(0deg) scale(1);
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  50% {
+    transform: rotateY(180deg) scale(1.5);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    transform: rotateY(360deg) scale(1);
   }
 }
