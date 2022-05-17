@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Atlas Operator Workshop',
   tagline: 'Deploying MERN applications on Kubernetes',
-  url: 'https://example.com',
+  url: 'https://joellord.github.io/mern-k8s/',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -17,7 +17,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'joellord', // Usually your GitHub org/user name.
-  projectName: 'mdbw-atlas-operator', // Usually your repo name.
+  projectName: 'mern-k8s', // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -91,16 +91,12 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                label: 'Forums',
+                href: 'https://www.mongodb.com/community/forums/?_ga=2.256185423.511703665.1652696364-1557922990.1638967600',
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                href: 'https://twitter.com/joel__lord',
               },
             ],
           },
@@ -108,17 +104,13 @@ const config = {
             title: 'More',
             items: [
               {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/joellord/mern-k8s',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Joel Lord. Built with Docusaurus.`,
       },
       prism: {
         additionalLanguages: ["docker", "yaml"],
