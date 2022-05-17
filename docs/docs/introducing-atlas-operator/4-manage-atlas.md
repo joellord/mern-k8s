@@ -95,7 +95,7 @@ This will take a couple of minutes. You can see the status of the cluster and pr
 
 ```bash
 kubectl get atlasprojects
-kubectl get altasclusters
+kubectl get atlasclusters
 ```
 
 In the meantime, you can go to the Atlas UI. The project should already be created, and you should see that a cluster is in the process of being created.
