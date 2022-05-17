@@ -105,5 +105,5 @@ In the meantime, you can go to the Atlas UI. The project should already be creat
 Getting your connection string to that newly created database can now be done through Kubernetes. Once your server is created, you can use the following command that uses `jq` to view the connection strings.
 
 ```bash
-kubectl get secret mern-k8s-db-admin-mern-k8s-user -o json | jq -r '.data | with_entries(.value |= @base64d)'
+kubectl get secret mern-k8s-cluster0-mernk8s -o json | jq -r '.data | with_entries(.value |= @base64d)'
 ```
