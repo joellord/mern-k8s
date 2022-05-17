@@ -77,4 +77,4 @@ app.get("/flush", async (req, res) => {
   res.send(result).status(200);
 })
 
-app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+app.listen(PORT, () => console.log(`Server started on port ${PORT}. Use Ctrl-C to stop the server.`));

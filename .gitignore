@@ -2,3 +2,4 @@ node_modules
 mongodb-kubernetes-operator
 .DS_Store
 secrets.md
+.env

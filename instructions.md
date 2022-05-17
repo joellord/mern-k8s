@@ -1,10 +1,3 @@
-npx create-react-app front
-cd front
-rm -rf ./.git
-npm start
-Add "homepage": "." to package.json
-touch index.js
-
 Open new terminal on project root
 mkdir back && cd back
 npm init -y
@@ -92,6 +85,13 @@ app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
 Test out the server
 curl -d '{"name": "Anonymous", "message": "So much wow!"}' -H "Content-Type: application/json" -X POST http://localhost:5000/entry
 curl localhost:5000/entries
+
+npx create-react-app front
+cd front
+rm -rf ./.git
+npm start
+Add "homepage": "." to package.json
+touch index.js
 
 Connect front-end in App.js
 ```
