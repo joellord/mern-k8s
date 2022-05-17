@@ -40,6 +40,10 @@ spec:
               value: "/api"
 ```
 
+:::info
+Don't forget to change `$DOCKER_HUB_USERNAME` for your actual value
+:::
+
 :::note
 Note the `BASE_URL` environment variable value here. In this case, we will use `/api` as the base URL. This address will be definted in the ingress in a future step.
 :::
