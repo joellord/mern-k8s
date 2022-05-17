@@ -1,0 +1,8 @@
+{
+  "label": "Deploy to Kubernetes",
+  "position": 7,
+  "link": {
+    "type": "generated-index",
+    "description": "Now that we have all of our containers, let's deploy the application to Kubernetes"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "label": "Environment setup",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Set up your environment before starting the workshop"
+  }
+}

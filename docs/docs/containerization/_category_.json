@@ -1,0 +1,8 @@
+{
+  "label": "Containerize that app",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "Now that you can run this application locally, it's time to containerize the components in preparation for a deployment in the cloud."
+  }
+}

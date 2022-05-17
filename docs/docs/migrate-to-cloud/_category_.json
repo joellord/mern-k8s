@@ -1,0 +1,8 @@
+{
+  "label": "Migrate to Cloud database",
+  "position": 6,
+  "link": {
+    "type": "generated-index",
+    "description": "So far, we've been using a container for the database. However, data is not persisted and that could be a problem. In this section, we will migrate the database to use MongoDB Atlas."
+  }
+}

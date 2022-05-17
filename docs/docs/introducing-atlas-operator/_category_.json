@@ -1,0 +1,8 @@
+{
+  "label": "Introducing the Atlas Operator",
+  "position": 8,
+  "link": {
+    "type": "generated-index",
+    "description": "We're still using MongoDB Atlas, but we can't manage the database from here. Furthermore, the connection strings are part of our deployment files, which could cause problems down the road. This is where the MongoDB Atlas Operator will help us."
+  }
+}
