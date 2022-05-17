@@ -38,9 +38,9 @@ You can create the secret with `kubectl`.
 
 ```bash
 kubectl create secret generic mongodb-atlas-operator-api-key \
-    --from-literal="orgId="$ORG_ID \
-    --from-literal="publicApiKey="$ATLAS_PUBLIC_KEY \
-    --from-literal="privateApiKey="$ATLAS_PRIVATE_KEY \
+    --from-literal="orgId=$ORG_ID" \
+    --from-literal="publicApiKey=$ATLAS_PUBLIC_KEY" \
+    --from-literal="privateApiKey=$ATLAS_PRIVATE_KEY" \
     -n mongodb-atlas-system
 ```
 
