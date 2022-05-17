@@ -80,14 +80,14 @@ spec:
     spec:
       containers:
         - name: mern-k8s-back
-          image: joellord/mern-k8s-back
+          image: $DOCKER_HUB_USERNAME/mern-k8s-back
           ports: 
             - containerPort: 5000
           env: 
             - name: PORT
               value: "5000"
             - name: CONN_STR
-              value: "mongodb+srv://user:pass@cluster0.2grje.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+              value: "$ATLAS_CONNECTION_STRING"
 ```
 
 :::note
