@@ -91,7 +91,11 @@ spec:
 ```
 
 :::info
-Don't forget to replace `$DOCKER_HUB_USERNAME` and `$ATLAS_CONNECTION_STRING` with your own values.
+Don't forget to replace `$DOCKER_HUB_USERNAME` and `$ATLAS_CONNECTION_STRING` with your own values, or use the following script to do it for you in bash.
+
+```bash
+envsubst < back/deployment.yaml | tee back/deployment.yaml
+```
 :::
 
 ## Create your service

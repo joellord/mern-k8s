@@ -41,7 +41,11 @@ spec:
 ```
 
 :::info
-Don't forget to change `$DOCKER_HUB_USERNAME` for your actual value
+Don't forget to change `$DOCKER_HUB_USERNAME` for your actual value, or use the following script to do it for you in bash.
+
+```bash
+envsubst < front/deployment.yaml | tee front/deployment.yaml
+```
 :::
 
 :::note
