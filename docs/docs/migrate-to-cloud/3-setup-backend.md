@@ -26,4 +26,4 @@ docker run -d --rm --name mern-k8s-back -p 5000:5000 -e PORT=5000 -e CONN_STR=$A
 ```
 
 ## Test the application
-Once again, open up your browser to [localhost:5000](http://localhost:5000) to test out the application. Because you migrated to the cloud database, you won't see the data you had earlier. However, this data is now persisted. Even if you restart your containers, you can still access the data from the Atlas cluster.
+Once again, open up your browser to [http://localhost:8080](localhost:8080) to test out the application. Because you migrated to the cloud database, you won't see the data you had earlier. However, this data is now persisted. Even if you restart your containers, you can still access the data from the Atlas cluster.
