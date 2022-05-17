@@ -39,7 +39,7 @@ spec:
 :::note
 The `annotation` will take the second argument from the regular expression used in the path, and use that as the request sent to the service. 
 
-In other words, a request to `/api/healthz` to the ingress will the rewritten as `/health` when it is sent to the backend service.
+In other words, a request to `/api/healthz` to the ingress will the rewritten as `/healthz` when it is sent to the backend service.
 
 This is why the path matching expression for the frontend has an empty set of parenthesis.
 :::
