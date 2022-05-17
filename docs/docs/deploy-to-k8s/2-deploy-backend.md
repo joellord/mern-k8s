@@ -90,7 +90,7 @@ spec:
               value: "$ATLAS_CONNECTION_STRING"
 ```
 
-:::note
+:::info
 Don't forget to replace `$DOCKER_HUB_USERNAME` and `$ATLAS_CONNECTION_STRING` with your own values.
 :::
 
