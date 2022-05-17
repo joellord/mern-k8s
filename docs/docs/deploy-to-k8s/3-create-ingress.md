@@ -20,17 +20,20 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: mern-k8s-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
 spec:
   rules:
     - http:
         paths:
-          - path: /
+          - path: /(.*)
             pathType: Prefix
             backend:
               service:
                 name: mern-k8s-back
                 port:
                   number: 80
+
 ```
 
 ## Apply the ingress
