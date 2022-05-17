@@ -9,7 +9,7 @@ const config = {
   title: 'Atlas Operator Workshop',
   tagline: 'Deploying MERN applications on Kubernetes',
   url: 'https://joellord.github.io/mern-k8s/',
-  baseUrl: '/',
+  baseUrl: '/mern-k8s/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
