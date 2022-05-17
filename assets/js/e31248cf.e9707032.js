@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmdbw_atlas_operator=self.webpackChunkmdbw_atlas_operator||[]).push([[360],{2983:function(a){a.exports=JSON.parse('{"label":"docusaurus","permalink":"/mern-k8s/blog/tags/docusaurus","allTagsPath":"/mern-k8s/blog/tags","count":4}')}}]);

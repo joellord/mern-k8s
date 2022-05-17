@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmdbw_atlas_operator=self.webpackChunkmdbw_atlas_operator||[]).push([[4354],{5424:function(a){a.exports=JSON.parse('{"label":"hello","permalink":"/mern-k8s/blog/tags/hello","allTagsPath":"/mern-k8s/blog/tags","count":2}')}}]);
