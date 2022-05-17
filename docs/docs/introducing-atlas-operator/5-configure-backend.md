@@ -32,6 +32,12 @@ In your `/back/deployment.yaml` file, change the `env` section of the containers
 
 This will use the same connection string you've just seen in your terminal.
 
+Apply those changes to your cluster.
+
+```bash
+kubectl apply -f ./back
+```
+
 If you look at your current pods:
 
 ```bash
