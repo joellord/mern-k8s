@@ -63,6 +63,10 @@ COPY ./index.js .
 CMD node .
 ```
 
+:::tip
+Now would be a good time to stop the local instances you have running, or else you'll run into port issues.
+:::
+
 ## Build the backend image
 
 With this new `Dockerfile`, you will be able to build your own image to be shared with the world. This image will contain the source code, along with all the required dependencies and runtimes needed to run the application. 

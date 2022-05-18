@@ -17,14 +17,6 @@ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-
 install minikube-linux-amd64 /usr/local/bin/minikube
 ```
 
-## Enable the Ingress addon
-
-As part of this workshop, you will need to install the `ingress` addon. This can be done with the following command.
-
-```bash
-minikube addons enable ingress
-```
-
 ## Start the Minikube instance
 
 You are now ready to start your Minikube instance. If you already used Minikube in the past, it is strongly recommended that you start with a new clean environment.
@@ -41,4 +33,12 @@ You are now ready to start Minikube. Run Minikube with `--host-dns-resolver=true
 
 ```bash
 minikube start --driver=none --kubernetes-version=v1.23.3 --host-dns-resolver=true --dns-proxy=false
+```
+
+## Enable the Ingress addon
+
+As part of this workshop, you will need to install the `ingress` addon. This can be done with the following command.
+
+```bash
+minikube addons enable ingress
 ```

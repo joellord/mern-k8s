@@ -9,7 +9,7 @@ Now that you've got a database and a backend, it's time to start the frontend to
 From a new terminal window, go to your `front` folder. You might need to navigate to the root folder that you cloned earlier first.
 
 ```bash
-cd front
+cd ../front
 ```
 
 From this folder, use `npm` to install the required dependencies.

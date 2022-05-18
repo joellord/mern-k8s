@@ -94,7 +94,7 @@ spec:
 Don't forget to replace `$DOCKER_HUB_USERNAME` and `$ATLAS_CONNECTION_STRING` with your own values, or use the following script to do it for you in bash.
 
 ```bash
-envsubst < back/deployment.yaml | tee back/deployment.yaml
+envsubst < back/deployment.yaml > back/deployment.tmp.yaml && mv back/deployment.tmp.yaml back/deployment.yaml
 ```
 :::
 

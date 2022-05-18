@@ -44,7 +44,7 @@ spec:
 Don't forget to change `$DOCKER_HUB_USERNAME` for your actual value, or use the following script to do it for you in bash.
 
 ```bash
-envsubst < front/deployment.yaml | tee front/deployment.yaml
+envsubst < front/deployment.yaml > front/deployment.tmp.yaml && mv front/deployment.tmp.yaml front/deployment.yaml
 ```
 :::
 
