@@ -1,9 +1,9 @@
 ---
 sidebar_position: 4
 ---
-# Create and manage an Atlas cluster
+# Create and manage an Atlas deployment
 
-You are now ready to manage your Atlas projects and clusters from Kubernetes. This can be done with the three new CRDs that were added to your cluster. Those CRDs are `AtlasProject` to manage projects, `AtlasCluster` to manage clusters, and `AtlasDatabaseUser` to manage database users.
+You are now ready to manage your Atlas projects and clusters from Kubernetes. This can be done with the three new CRDs that were added to your cluster. Those CRDs are `AtlasProject` to manage projects, `AtlasDeployment` to manage deployments, and `AtlasDatabaseUser` to manage database users.
 
 ## Create a project
 
@@ -27,13 +27,13 @@ This project will be open to anyone on the web. It is best practice to only open
 
 This will create a new project called "MERN K8s" in Atlas.
 
-## Create a cluster
+## Create a deployment
 
-Now that you have a project setup, you can create a new cluster inside this project. In a new file called `/atlas/cluster.yaml`, add the following yaml.
+Now that you have a project setup, you can create a new deployment inside this project. In a new file called `/atlas/deployment.yaml`, add the following yaml.
 
 ```yaml
 apiVersion: atlas.mongodb.com/v1
-kind: AtlasCluster
+kind: AtlasDeployment
 metadata:
   name: mern-k8s-cluster
 spec:
@@ -47,7 +47,7 @@ spec:
       regionName: US_EAST_1
 ```
 
-This will create a new M10 cluster on AWS, in the US_EAST_1 region. You use a similar syntax to deploy in any region on AWS, GCP, or Azure.
+This will create a new M10 deployment on AWS, in the US_EAST_1 region. You use a similar syntax to deploy in any region on AWS, GCP, or Azure.
 
 :::info
 For your development environments, you might want to use M0 (free) clusters. Because those are hosted on shared servers, the configuration is slightly different. For the provider settings, you can use the following for an M0 cluster.
@@ -95,7 +95,7 @@ This will take a couple of minutes. You can see the status of the cluster and pr
 
 ```bash
 kubectl get atlasprojects
-kubectl get atlasclusters
+kubectl get atlasdeployments
 ```
 
 In the meantime, you can go to the Atlas UI. The project should already be created, and you should see that a cluster is in the process of being created.
