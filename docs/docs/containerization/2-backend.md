@@ -3,9 +3,9 @@ sidebar_position: 2
 ---
 # Containerize the backend
 
-It's now time to create your first container. Packaging a Node.js application is one of the simplest container you can create, so it's a good place to start. 
+It's now time to create your first container. Packaging a Node.js application is one of the simplest containers you can create, so it's a good place to start. 
 
-Let's look how to do this.
+Let's look at how to do this.
 
 ## Create a Dockerfile
 

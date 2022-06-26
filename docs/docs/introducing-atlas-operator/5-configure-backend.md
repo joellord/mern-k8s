@@ -3,7 +3,7 @@ sidebar_position: 5
 ---
 # Configure the backend
 
-Now that your project and cluster are created. You can access the various properties from your Atlas instance. You can now access the connection string, and even configure your backend service to use that connection string.
+Now that your project and cluster are created, you can access the various properties from your Atlas instance. You can now access the connection string, and even configure your backend service to use that connection string.
 
 ## Get the connection string
 
@@ -15,7 +15,7 @@ kubectl get secret mern-k8s-cluster0-mernk8s -o json | jq -r '.data | with_entri
 
 ## Update the backend deployment
 
-Now that you can find your connection string from with Kubernetes, you can use that as part of your deployment to specify the connection string to your backend. 
+Now that you can find your connection string from within Kubernetes, you can use that as part of your deployment to specify the connection string to your backend. 
 
 In your `/back/deployment.yaml` file, change the `env` section of the containers template to the following.
 

@@ -49,7 +49,7 @@ envsubst < front/deployment.yaml > front/deployment.tmp.yaml && mv front/deploym
 :::
 
 :::note
-Note the `BASE_URL` environment variable value here. In this case, we will use `/api` as the base URL. This address will be definted in the ingress in a future step.
+Note the `BASE_URL` environment variable value here. In this case, we will use `/api` as the base URL. This address will be defined in the ingress in a future step.
 :::
 
 ## Create the service

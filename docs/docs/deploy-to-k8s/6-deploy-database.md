@@ -3,7 +3,7 @@ sidebar_position: 6
 ---
 # Deploying the database on Kubernetes
 
-Deploying a database on Kubernetes is no simple task. You will need to add persistence, as well as ensuring that you have redundancy. And a your application grows, you might need to add sharding and more replication. Perhaps you will need to move data to specific geolocated servers to ensure that you GDPR policies.
+Deploying a database on Kubernetes is no simple task. You will need to add persistence, as well as ensuring that you have redundancy. And as your application grows, you might need to add sharding and more replication. Perhaps you will need to move data to specific geolocated servers to comply with GDPR policies.
 
 All of these are highly complex tasks. 
 

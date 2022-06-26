@@ -32,7 +32,7 @@ export ATLAS_PRIVATE_KEY=e13debfb-4f35-4...cb
 
 ## Create the Kubernetes secrets
 
-Now that you have create the API key, you can specify those values to the MongoDB Atlas Operator. This will give the operator the necessary permissions to create and manage projects and clusters.
+Now that you have created the API key, you can specify those values to the MongoDB Atlas Operator. This will give the operator the necessary permissions to create and manage projects and clusters.
 
 You can create the secret with `kubectl`.
 
@@ -58,4 +58,3 @@ Our database user will have a password. You won't want to hard code this passwor
 kubectl create secret generic atlaspassword --from-literal="password=mernk8s"
 kubectl label secret atlaspassword atlas.mongodb.com/type=credentials
 ```
-

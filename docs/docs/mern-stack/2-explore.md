@@ -47,7 +47,7 @@ The repository contains everything you need to run this workshop. Let's look at 
 Contains the required files for the back-end. Most of the code is located in the `index.js` file.
 
 #### dockerfiles
-When comes the time to build containers for each of the tiers, you will need to create a `Dockerfile` for each application. The necessary templates can be found here.
+When it comes the time to build containers for each of the tiers, you will need to create a `Dockerfile` for each application. The necessary templates can be found here.
 
 #### docs
 All of the documentation you are reading right now can be found in this folder.
