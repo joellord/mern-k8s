@@ -33,7 +33,7 @@ Go back to the _Database_ item from the left navigation menu. You should see you
 From the next modal, choose _Connect using MongoDB Compass_. This will show you the connection string to your cluster.
 
 :::tip
-While we won't be using MongoDB Compass in the context of this workshop, you still still [look it up](https://www.mongodb.com/products/compass), it's a great UI for everything MongoDB related.
+While we won't be using MongoDB Compass in the context of this workshop, you still can [look it up](https://www.mongodb.com/products/compass), it's a great UI for everything MongoDB related.
 :::
 
 ![Connection String](/img/atlas/connstring.png#center)

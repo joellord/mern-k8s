@@ -4,7 +4,7 @@ sidebar_position: 4
 # Containerize the frontend
 The backend is now running inside its own container. It's now time to build a container for the frontend.
 
-The frontend container is slightly  more complex than the backend one. It uses a multi stage build approach to start by building the application with Node.js, and then copy the resulting files to an Nginx server. This second stage with the server and the build files will constitue the actual container, and the previous stages won't be part of that final image.
+The frontend container is slightly  more complex than the backend one. It uses a multi stage build approach to start by building the application with Node.js, and then copy the resulting files to an Nginx server. This second stage with the server and the build files will constitute the actual container, and the previous stages won't be part of that final image.
 
 ## Create a Dockerfile
 Just as you did for the backend, you will need to create a `Dockerfile` to tell Docker how to build this new image. Make sure that you are in the `front` folder this time.
@@ -29,7 +29,7 @@ RUN cp /tmp/jq-linux64 /usr/bin/jq
 RUN chmod +x /usr/bin/jq
 ```
 
-With the image read, you can change the working directory and copy over all the files from the `front` folder into the `/opt/app` folder of the contaier.
+With the image read, you can change the working directory and copy over all the files from the `front` folder into the `/opt/app` folder of the container.
 
 ```docker
 WORKDIR /opt/app

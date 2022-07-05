@@ -19,7 +19,7 @@ npm install
 ```
 
 ## Edit configuration
-Front-end servers can't use environment variables because they run on a user's browser. However, there are times when you want to use different values for different environment. We will see how to do this later, when we write the docker files. 
+Front-end servers can't use environment variables because they run on a user's browser. However, there are times when you want to use different values for different environments. We will see how to do this later, when we write the docker files. 
 
 In the meantime, you should put all of your variables that might change in a separate file. In this application, there is only one environment variable, which is used for the `BASE_URL` where the API can be found. 
 

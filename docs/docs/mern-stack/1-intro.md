@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # What is the MERN Stack
 
-The MERN stack is a technology stack commonly used to build JavaScript application. It uses a **M**ongoDB database, the **E**xpress framework for the back-end, the **R**eact framework on the front-end, and the server is powered by the **N**ode.js runtime.
+The MERN stack is a technology stack commonly used to build JavaScript applications. It uses a **M**ongoDB database, the **E**xpress framework for the back-end, the **R**eact framework on the front-end, and the server is powered by the **N**ode.js runtime.
 
 ## Three-tier applications
 
@@ -29,4 +29,4 @@ In this application, the back-end will use an Express server that runs on Node.j
 
 ### Database
 
-In order to persist data, a database will neeed to be used. For this specific application, MongoDB will be used to store data. In order to explore the application locally, it will run in a container, but we will use MongoDB Atlas for the more advanced use cases. 
+In order to persist data, a database will need to be used. For this specific application, MongoDB will be used to store data. In order to explore the application locally, it will run in a container, but we will use MongoDB Atlas for the more advanced use cases. 

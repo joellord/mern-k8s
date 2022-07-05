@@ -57,7 +57,7 @@ Finally, still in the `spec`, you can specify the `template` to be used for thes
               value: "$ATLAS_CONNECTION_STRING"
 ```
 
-You final `back/deployment.yaml` file should look like the following.
+Your final `back/deployment.yaml` file should look like the following.
 
 ```yaml
 apiVersion: apps/v1
@@ -138,7 +138,7 @@ Using `kubectl`, you can apply those two new files to your Kubernetes cluster.
 kubectl apply -f ./back
 ```
 
-You can take at look at what you now have running in your cluster by using the `kubectl get` command.
+You can take a look at what you now have running in your cluster by using the `kubectl get` command.
 
 ```bash
 kubectl get all
