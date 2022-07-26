@@ -39,8 +39,8 @@ metadata:
 spec:
   projectRef:
     name: mern-k8s-project
-  clusterSpec:
-    name: "Cluster0"
+  deploymentSpec:
+    name: Cluster0
     providerSettings:
       instanceSizeName: M10
       providerName: AWS
