@@ -9,11 +9,18 @@ If you created a Docker Compose setup earlier, and want to tweak it to use the n
 version: "3"
 services:
   backend:
-    image: mongodb+srv://mern-k8s:mern-k8s@cluster0.wc3ix.mongodb.net
-    ports:  
-    - "5000:5000" 
+    image: docker.io/joellord/mern-k8s-back
+    container_name: mern-k8s-back
+    environment:
+      CONN_STR: "mongodb+srv://mern-k8s:<password>@cluster0.wc3ix.mongodb.net/"
+      PORT: "5000"
+    ports:
+    - "5000:5000"
   client:
-    image: docker.io//joellord/mern-k8s-front
+    image: docker.io/joellord/mern-k8s-front
+    container_name: mern-k8s-front
+    environment:
+      BASE_URL: "http://localhost:5000"
     ports:
       - "8080:80"
 ```
