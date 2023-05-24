@@ -12,7 +12,7 @@ services:
     image: docker.io/joellord/mern-k8s-back
     container_name: mern-k8s-back
     environment:
-      CONN_STR: "mongodb+srv://mern-k8s:<>@cluster0.wc3ix.mongodb.net/"
+      CONN_STR: "mongodb+srv://mern-k8s:mern-k8s@cluster0.wc3ix.mongodb.net/"
       PORT: "5000"
     ports:
     - "5000:5000"
